@@ -24,7 +24,7 @@ int[] EightMass(int size, int from, int to)
 int Sum (int [] arr)
 {
   int summa = 0;
-  for (int i = 1; i < arr.Length; i+=2)
+  for (int i = 0; i < arr.Length; i+=2)
   {
     summa += arr[i];
   }

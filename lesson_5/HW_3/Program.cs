@@ -2,7 +2,7 @@
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
-void Print(int[] arr)
+void Print(double[] arr)
 {
     int size = arr.Length;
 
@@ -11,19 +11,19 @@ void Print(int[] arr)
     Console.WriteLine();
 }
 
-int[] EightMass(int size, int from, int to)
+double[] EightMass(int size, int from, int to)
 {
-    int[] arr = new int[size];
+    double[] arr = new double[size];
 
     for (int i = 0; i < size; i++)
-        arr[i] = new Random().Next(from, to + 1);
+        arr[i] = new Random().NextDouble()* (to - from) + from;
     return arr;
 }
 
-int Raz (int [] arr)
+double Raz (double [] arr)
 {
-  int max = arr[0];
-  int min = arr[0];
+  double max = arr[0];
+  double min = arr[0];
   for (int i = 0; i < arr.Length; i++)
   {
     if(arr[i] > max)
@@ -35,12 +35,14 @@ int Raz (int [] arr)
       min = arr[i];
     }
   }
-  int x = max - min;
+  Console.WriteLine($"Максимальное-{max}");
+  Console.WriteLine($"Минимальное-{min}");
+  double x = max - min;
   return x;
 }
 int size = int.Parse(Console.ReadLine()!);
 int from = int.Parse(Console.ReadLine()!);
 int to = int.Parse(Console.ReadLine()!);
-int [] arr = EightMass(size, from, to);
+double [] arr = EightMass(size, from, to);
 Print(arr);
 Console.WriteLine(Raz(arr));
